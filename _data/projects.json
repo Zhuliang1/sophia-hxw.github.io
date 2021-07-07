@@ -38,5 +38,11 @@
 		"image": "placeholder.jpg",
 		"date": "Oct 2016",
 		"tags": ["Python","nodejs"]
+	},
+	{
+		"name": "Cool project 7",
+		"image": "placeholder.jpg",
+		"date": "Feb 2021",
+		"tags": ["HiSi"]
 	}
 ]

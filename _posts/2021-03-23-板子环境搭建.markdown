@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "hisi开发板环境搭建"
+date:   2021-03-23 00:18:23 +0700
+categories: [hisi]
+---
+**需要使用工具HiTool**
+
+## 烧录过程
+- uboot烧录   
+通过hitool给板子刷 uboot
+- 系统烧录(ubuntu为例)   
+重新烧录之前要擦除
+```
+mmc erase 0xe000 0xdf2000
+tftp2emmc 0x0000  u-boot-hi3559av100.bin   
+tftp2emmc 0x2000 hihope_fip.bin         #8192  = 1024 *  8，kernel的镜像
+tftp2emmc 0xe000 rootfs.img    #57344 = 1024 * 56，文件系统的镜像
+```
+- 修改系统ip
+```
+setenv serverip 192.168.1.105
+setenv ipaddr 192.168.1.109
+```
+- 修改系统时间
+- update
+- hdmi显示
+
+## sample测试
+
+## 问题记录
++ 进入uboot方式
+电脑连接串口成功后，板子加电，看到log输出时立刻按键盘任意键(拼手速，满了就进系统了)，然后就能就能看到进入uboot之后的命令界面，setenv环境变量，修改ip，修改系统时间等等都在这种模式下；
+另一种描述：通过MobaXterm连接串口，进入uboot（进入后默认就是uboot模式）；
+
++ telnet远程访问
+
++ 修改ubuntu系统时间
+
++ ubuntu系统扩容
