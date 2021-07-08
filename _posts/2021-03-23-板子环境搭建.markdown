@@ -4,12 +4,13 @@ title:  "hisi开发板环境搭建"
 date:   2021-03-23 00:18:23 +0700
 categories: [hisi]
 ---
-**需要使用工具HiTool**
+# 工具
+需要使用工具HiTool
 
 ## 烧录过程
 - uboot烧录   
 通过hitool给板子刷 uboot
-- 系统烧录(ubuntu为例)   
+- 烧录系统(ubuntu为例)   
 重新烧录之前要擦除
 ```
 mmc erase 0xe000 0xdf2000
@@ -25,8 +26,6 @@ setenv ipaddr 192.168.1.109
 - 修改系统时间
 - update
 - hdmi显示
-
-## sample测试
 
 ## 问题记录
 + 进入uboot方式
